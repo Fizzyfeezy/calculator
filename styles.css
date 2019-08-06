@@ -1,0 +1,109 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-family: Cambria, sans-serif;
+    font-weight: bold;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to left, #00ff6c, #00AAFF);
+}
+
+.calculator-grid{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 80px);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    grid-template-rows: minmax(100px, auto) repeat(5, 80px);
+}
+
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    /* border: 1px solid white; */
+    /* outline: none; */
+    /* background-color: rgba(255, 255, 255, .75); */
+}
+
+/* .calculator-grid > button:hover {
+    background-color: rgba(255, 255, 255, .9);
+} */
+
+.span-two{
+    grid-column: span 2;
+}
+
+.output{
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, .75);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    height: 110px;;
+}
+
+.output .previous-operand{
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+}
+
+.output .current-operand{
+    color: white;
+    font-size: 2.7rem;
+}
+
+.color {
+    background-color: rgb(245, 112, 35);
+    color: whitesmoke;
+    border: 1px solid rgb(245, 112, 35);
+    -webkit-transition-duration: 0.4s; /*Safari */
+    transition-duration: 0.4s;
+    overflow: hidden;
+}
+.color:after{
+    /* content: ""; */
+    background: #f1f1f1;
+    display: block;
+    position: absolute;
+    padding-top: 5%;
+    padding-left: 5%;
+    margin-left: -10px !important;
+    margin-top: -10%;
+    opacity: 0;
+    transition: all 0.8s;
+}
+
+.color:active::after{
+    padding: 0;
+    margin:  0;
+    opacity: 1;
+    transition: 0s;
+}
+.color:hover {
+    background-color: rgb(245, 112, 35, .9);
+}
+.color1 {
+    background-color: rgba(206, 198, 198, 0.75);
+    border: 1px solid rgba(206, 198, 198, 0.75);
+}
+.color1:hover {
+    background-color: rgba(206, 198, 198, 0.9);
+}
+
+.color2 {
+    background-color:rgb(44, 43, 43);
+    color: whitesmoke;
+    border: 1px solid rgb(44, 43, 43);
+}
+.color2:hover {
+    background-color: rgb(44, 43, 43, .9);
+}
